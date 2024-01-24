@@ -7,7 +7,7 @@ jobs:
         steps:
             - name: List of Files Before
               run: ls -a
-            - name: Checkout Manually
+            - name: Checkout code Manually
               run: |
                 git init
                 git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
@@ -18,4 +18,8 @@ jobs:
             - name: Delete all files 
               run: rm -r /home/runner/work/github-actions/github-actions/*
             - name: List of Files after delete
+              run: ls -a
+            - name: Checkout code using action
+              uses: actions/checkout@v3
+            - name: List of Files After
               run: ls -a
