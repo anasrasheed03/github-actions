@@ -16,6 +16,6 @@ jobs:
             - name: List of Files After
               run: ls -a
             - name: Delete all files 
-              run: rm -r /home/runner/work/github-actions/github-actions
+              run: rm -r /home/runner/work/github-actions/github-actions/*
             - name: List of Files after delete
               run: ls -a
