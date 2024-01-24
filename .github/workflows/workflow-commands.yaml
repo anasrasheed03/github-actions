@@ -1,0 +1,9 @@
+name: workflow commands
+on: [push]
+
+jobs:
+    workflow-commands:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display an Error message
+              run: echo "::error::This is an error message"
