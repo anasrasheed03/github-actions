@@ -1,0 +1,17 @@
+name: Checkout From Gitub
+on: [push]
+
+jobs:
+    github-checkout-manual:
+        runs-on: ubuntu-latest
+        steps:
+            - name: List of Files Before
+              run: ls -a
+            - name: Checkout Manually
+              run: |
+                git init
+                git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+                git fetch origin
+                git checkout main
+            - name: List of Files After
+              run: ls -a
